@@ -27,7 +27,7 @@ setInterval(() => {
 
     offsetX= Math.abs(rx-ax);
     offsetY= Math.abs(ry-ay)
-    if(offsetX<120 && offsetY<55){
+    if(offsetX<100 && offsetY<55){
         gameover.style.visibility= 'visible';
         astro.classList.remove('animateAstro');
     }

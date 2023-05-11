@@ -2,7 +2,7 @@ score=0;
 cross=true;
 
 document.onkeydown = function(e){
-    console.log(e.code);{
+    console.log(e.code)
     if(e.code == 'ArrowUp'){
         rocket= document.querySelector('.rocket');
         rocket.classList.add('animateRocket');
@@ -10,7 +10,18 @@ document.onkeydown = function(e){
             rocket.classList.remove('animateRocket');
         }, 800);
     }
-}
+
+    if(e.code == 'ArrowRight'){
+        rocket= document.querySelector('.rocket'); 
+        rx= parseInt(window.getComputedStyle(rocket, null).getPropertyValue('left'));  
+        rocket.style.left = (rx+100)+'px';
+    }
+
+    if(e.code == 'ArrowLeft'){
+        rocket= document.querySelector('.rocket');        
+        rx= parseInt(window.getComputedStyle(rocket, null).getPropertyValue('left'));  
+        rocket.style.left = (rx-100)+'px';
+    }
 }
 setInterval(() => {
     rocket= document.querySelector('.rocket');
